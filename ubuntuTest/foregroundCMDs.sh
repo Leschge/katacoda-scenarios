@@ -6,5 +6,4 @@ sleep 1
 docker exec -it my-postgres bash
 sleep 1
 psql -U postgres
-sleep 1
 \! clear

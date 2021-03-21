@@ -40,5 +40,8 @@
   },
   "backend": {
     "imageid": "ubuntu:2004"
-  }
+  },
+  "files":[
+    "example.json","data.json"
+  ]
 }
