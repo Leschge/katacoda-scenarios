@@ -43,11 +43,13 @@
   },
   "environment": {
     "uilayout": "editor-terminal",
+    "uisettings": "javascript",
     "uieditorpath": "/root/json"
   },
   "backend": {
     "imageid": "ubuntu:2004"
   },
   "files":[
+    "data.json"
   ]
 }
