@@ -6,6 +6,6 @@ sleep 1
 docker exec -it my-postgres bash
 sleep 2
 psql -U postgres
-\! clear#
+\! clear
 
 #docker copy /usr/local/bin/data.json my-postgres:/data.json
