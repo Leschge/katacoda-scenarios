@@ -36,13 +36,14 @@
     },
     "assets": {
       "host01": [
-          {"file": "data.json", "target": "/root/test", "chmod": "+x"},
-          {"file": "example.json", "target": "/root", "chmod": "+x"}
+          {"file": "data.json", "target": "/root/json", "chmod": "+x"},
+          {"file": "example.json", "target": "/root/json", "chmod": "+x"}
       ]
   }
   },
   "environment": {
-    "uilayout": "editor-terminal"
+    "uilayout": "editor-terminal",
+    "uieditorpath": "/root/json"
   },
   "backend": {
     "imageid": "ubuntu:2004"
