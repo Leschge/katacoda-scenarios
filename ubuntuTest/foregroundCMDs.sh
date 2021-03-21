@@ -7,4 +7,4 @@ docker cp /root/json/data.json my-postgres:/json/data.json
 docker exec -it my-postgres bash
 sleep 2
 psql -U postgres
-#\! clear
+\! clear
