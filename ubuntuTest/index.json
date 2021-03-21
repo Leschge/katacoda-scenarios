@@ -36,7 +36,8 @@
     }
   },
   "environment": {
-    "uilayout": "editor-terminal"
+    "uilayout": "editor-terminal",
+    "uieditorpath": "/root/json-files"
   },
   "backend": {
     "imageid": "ubuntu:2004"
