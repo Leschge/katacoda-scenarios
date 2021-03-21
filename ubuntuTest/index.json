@@ -36,7 +36,7 @@
     },
     "assets": {
       "host01": [
-          {"file": "data.json", "target": "/root", "chmod": "+x"},
+          {"file": "data.json", "target": "/root/test", "chmod": "+x"},
           {"file": "example.json", "target": "/root", "chmod": "+x"}
       ]
   }
@@ -48,6 +48,5 @@
     "imageid": "ubuntu:2004"
   },
   "files":[
-    "example.json","data.json"
   ]
 }
