@@ -50,6 +50,5 @@
     "imageid": "ubuntu:2004"
   },
   "files":[
-    "/root/data.json"
   ]
 }
