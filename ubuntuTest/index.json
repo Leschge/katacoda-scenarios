@@ -33,7 +33,13 @@
     },
     "finish": {
       "text": "finish.md"
-    }
+    },
+    "assets": {
+      "host01": [
+          {"file": "data.json", "target": "/usr/local/bin/", "chmod": "+x"},
+          {"file": "example.json", "target": "/usr/local/bin/", "chmod": "+x"}
+      ]
+  }
   },
   "environment": {
     "uilayout": "editor-terminal"
