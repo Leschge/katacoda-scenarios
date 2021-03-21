@@ -1,6 +1,8 @@
 #!/bin/bash
 
-echo "Waiting to complete"; while [ ! -f /opt/.backgroundfinished ] ; do sleep 2; done;
+echo "STARTE TUTORIAL ..." 
+while [ ! -f /opt/.backgroundfinished ] ; do sleep 2; done;
 docker exec -it my-postgres bash
+sleep 2
 psql -U postgres
-echo "done"
+echo "FERTIG"
