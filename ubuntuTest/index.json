@@ -43,7 +43,7 @@
   },
   "environment": {
     "uilayout": "editor-terminal",
-    "uisettings": "javascript",
+    "uisettings": "json",
     "uieditorpath": "/root/json"
   },
   "backend": {
