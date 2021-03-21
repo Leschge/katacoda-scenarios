@@ -36,8 +36,8 @@
     },
     "assets": {
       "host01": [
-          {"file": "data.json", "target": "/usr/local/bin/", "chmod": "+x"},
-          {"file": "example.json", "target": "/usr/local/bin/", "chmod": "+x"}
+          {"file": "data.json", "target": "/root", "chmod": "+x"},
+          {"file": "example.json", "target": "/root", "chmod": "+x"}
       ]
   }
   },
