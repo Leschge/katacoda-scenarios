@@ -41,9 +41,9 @@ Schlüssel = rechnung::1
   "Datum":22-03-2021 23:32:00", 
   "BuchungsNr": "2465433" 
   "Artikel":[
-    { "Rechnung":"1", "Name": "Pullover, "Preis": "35.00", "Menge": "1" },
-    { "Rechnung":"1", "Name": "Socken, "Preis": "7.95", "Menge": "3" },
-    { "Rechnung":"1", "Name": "Jeans, "Preis": "65.99", "Menge": "1" }
+    { "Name": "Pullover, "Preis": "35.00", "Menge": "1" },
+    { "Name": "Socken, "Preis": "7.95", "Menge": "3" },
+    { "Name": "Jeans, "Preis": "65.99", "Menge": "1" }
   ]
 }
 ```
