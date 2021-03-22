@@ -18,7 +18,7 @@ Sind deine Daten besonders strukturiert und einheitlich, eignen sich normale Tab
 Der letzte und wohl wichtigste Punkt ist die Modelierung von Beziehungen im JSON-Format. Ist die Mehrzahl deiner Daten getrennt aber untereinander verknüpft und strukturiert, eignen sich relationale Datenbanken offensichtlich am besten. Sie sind dafür konzipiert einzelne Einträge aus verschiedenen Tabellen als Ganzes auszugeben und bieten demensprechend mächtige aber einfache Abfragen an.
 Das JSON-Format hingegen ist besonders gut für Verschachtelungen innerhalb des JSON-Formats, aber eben nicht für getrennt erstellte Daten. Sind die Daten verknüpft in ihrer ERzeugung jedoch eher getrennt, sollte man diese wie bei relationalen Datenbanken normalisieren. Im JSON-Format ist jedes Kind und somit jeder Datenbankeintrag ein eigner JSON-String. Dieser wird über ein zusätzlicher Schlüssel zum Elternteil verknüpft. Dieser Fall ist im JSON-Format aber eher unkonventionell. Nachfolgend sind nochmal zwei Beispiele zur Verdeutlichung und eine Faustregel wann  verknüpfte Daten wie im JSON-Format gespeichert werden sollen.
 
-#### Normalform
+__Normalform__
 ```
 Schlüssel = rechnung::1
 { "Name":"Hans Peter", "Datum":22-03-2021 23:32:00", "BuchungsNr": "2465433" }
@@ -33,7 +33,7 @@ Schlüssel = artikel:882
 { "Rechnung":"1", "Name": "Jeans, "Preis": "65.99", "Menge": "1" }
 ```
 
-#### Verschachtelt
+__Verschachtelt__
 ```
 Schlüssel = rechnung::1
 { 
@@ -48,7 +48,7 @@ Schlüssel = rechnung::1
 }
 ```
 
-#### Faustregel
+__Faustregel__
 | Bedingung | Format |
 | ------------- |:-------------:|
 | 1 zu 1 oder 1 zu M Beziehung      | Verschachtelte Objekte |
