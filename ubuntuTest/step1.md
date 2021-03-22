@@ -49,6 +49,7 @@ Schlüssel = rechnung::1
 ```
 
 __Faustregel__
+
 | Bedingung | Format |
 | ------------- |:-------------:|
 | 1 zu 1 oder 1 zu M Beziehung      | Verschachtelte Objekte |
