@@ -5,7 +5,7 @@ Mit der JSON-Formatierung solltest du dich bereits auskennen. Falls ja kannst du
 Viel Spaß!
 
 ## Wann sollte ich JSON in Datenbanken verwenden? 🤔
-Bevor du anfängst absofort alle Benutzerkonten und Statistiken im JSON-Format in Datenbanken zu speichern, solltest du dir gut überlegen, wann es tatsächlich sinnvoll ist JSON zu benutzen. In der Mehrheit alle Fälle sind nämlich relationale Datenstrukturen einfacher zu verwalten, da JSON-Einträge oft schwieriger sind abzufragen und zu bearbeiten.
+Bevor du anfängst absofort alle Benutzerkonten und Statistiken im JSON-Format in Datenbanken zu speichern, solltest du dir gut überlegen, wann es tatsächlich sinnvoll ist JSON zu benutzen. In der Mehrheit alle Fälle sind nämlich relationale Datenstrukturen einfacher zu verwalten, da JSON-Einträge oft schwieriger sind abzufragen und zu bearbeiten. Deshalb solltest du dir die folgenden Fragen beantworten ...
 
 ### Welchen Datentyp möchtest du speichern? 
 JSON kann lediglich Daten als String abspeichern, weshalb du bei verschiedenen Abfragen oder Abfragen mit Aggregationen den Datentyp zuvor konvertieren musst. Verwendet deine Anwendung allerdings das komplette JSON direkt, kann es oft praktisch sein. Das JSON-Format lässt sich zum Beispiel in vielen Programmiersprachen einfach in deren Objekte deserialisieren. Ein anderes Beispiel sind benutzererstellte Daten wie Formulare die mit JSON-Werten (vor-)ausgefüllt werden müssen.  
