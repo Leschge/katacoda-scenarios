@@ -27,6 +27,7 @@ rechnungsNr = 236774
 		{ "Name": "Pullover", "Preis": "35.00", "Menge": "1" },
 		{ "Name": "Socken", "Preis": "7.95", "Menge": "3" },
 		{ "Name": "Jeans", "Preis": "65.99", "Menge": "1" }
+	]
 }
 ```
 
