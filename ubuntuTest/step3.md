@@ -14,10 +14,6 @@ Dadurch kann der Rückgabewert direkt mit weiteren Befehle verknüpft werden. Od
 ```
 '{"a": "value"}'::json->'a'  = "value"
 ```
-Ein Beispiel für einen Verkettente
-```
-'{"a": "value"}'::json->'a'  = "value"
-```
 
 Alle Namen kannst du also mit folgender Abfrage ausgeben:
 `SELECT details ->> 'Name' FROM rechnungen;`{{execute}}
@@ -29,13 +25,15 @@ Klicke auf die Datei unten um dir einen besseren Überblick über die Daten zu b
 `rechnungen.js`{{open}} 
 
 
+### Verkettete Abfragen
+
 Wie du sehen kannst ist ebenfalls die Adresse hinzugekommen, wir möchten alle eingetragene Orte im System ausgeben, dafür benötigen wir einen verkettete Abfrage:
 `SELECT details ->> 'Adresse' ->> 'Ort' FROM rechnungen;`{{execute}}
 
-Vermutlich bekommst du den Fehler ´ERROR: operator does not exist: text ->> ...´, kannst du dir vorstellen weshalb?  
+Vermutlich bekommst du den Fehler `ERROR: operator does not exist: text ->> ...`, kannst du dir vorstellen weshalb?  
 Für eine verschachtelte Abfrage müssen wir mit dem JSON(B) Operator arbeiten:
 `SELECT details -> 'Adresse' ->> 'Ort' FROM rechnungen;`{{execute}}
 
-Zur sicherheit gilt also: Bei mehreren Pfeilen darf immer nur den letzten mit doppeltem `>` geschrieben werden.
-Alternativ zeigen dir auch die doppelten Gänsefüßschen `"`, dass es sich gerade um JSON(B)-Objekte handelt.
+Zur sicherheit gilt also: Bei mehreren Pfeilen in einer Abfrage darf immer nur der letzte mit doppeltem `>` geschrieben werden.
+Alternativ zeigen dir auch die doppelten Gänsefüßschen `"` beim Ergebnis, dass es sich gerade um JSON(B)-Objekte handelt.
 `SELECT details -> 'Adresse' -> 'Ort' FROM rechnungen;`{{execute}}
