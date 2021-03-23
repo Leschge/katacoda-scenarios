@@ -19,13 +19,9 @@ Den Namen kannst du also mit folgender Abfrage ausgeben:
 
 `SELECT details ->> 'Name' FROM rechnungen;`{{execute}}
 
-Den Namen Felder kannst du mit folgender Abfrage ausgeben:
+Den Namen und die Kundennummer kannst du mit folgender Abfrage ausgeben:
 
 `SELECT details ->> 'Name', details ->> 'KundenNr' FROM rechnungen;;`{{execute}}
-
-Oder verkürzt:
-
-`SELECT details ->> 'Name', 'KundenNr' FROM rechnungen;;`{{execute}}
 
 ### Verkettete Abfragen
 Die Rechnung beinhaltet zwei Verschachtelungen, die Adresse als Objekt und alle Artikel in einem Array, ebenfalls als Objekt.
