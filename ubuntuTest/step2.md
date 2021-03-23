@@ -24,8 +24,8 @@ rechnungsNr = 236774
 	"Datum":"22-03-2021 23:32:00", 
 	"KundenNr": "2465433",
 	"Artikel":[
-		{ "Name": "Pullover", "Preis": "35.00", "Menge": "1" }
-		{ "Name": "Socken", "Preis": "7.95", "Menge": "3" }
+		{ "Name": "Pullover", "Preis": "35.00", "Menge": "1" },
+		{ "Name": "Socken", "Preis": "7.95", "Menge": "3" },
 		{ "Name": "Jeans", "Preis": "65.99", "Menge": "1" }
 }
 ```
@@ -36,8 +36,8 @@ rechnungsNr = 236774
 	"Datum":"22-03-2021 23:32:00", 
 	"KundenNr": "2465433",
 	"Artikel":[
-		{ "Name": "Pullover", "Preis": "35.00", "Menge": "1" }
-		{ "Name": "Socken", "Preis": "7.95", "Menge": "3" }
+		{ "Name": "Pullover", "Preis": "35.00", "Menge": "1" },
+		{ "Name": "Socken", "Preis": "7.95", "Menge": "3" },
 		{ "Name": "Jeans", "Preis": "65.99", "Menge": "1" }
 }');`{{execute}}
 
