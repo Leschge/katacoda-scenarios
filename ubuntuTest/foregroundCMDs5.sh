@@ -50,6 +50,6 @@ INSERT INTO rechnungen (rechnungsNr, details) VALUES (23777, '{
 	"KundenNr": "2465436",
 	"Adresse": { "Strasse": "Tempelstrasse 78", "PLZ":"25733", "Ort": "Berlin" },
 	"Artikel":[
-		{ "Name": "Shorts", "Preis": "35.00", "Menge": "2" }
+		{ "Name": "Socken", "Preis": "9.99", "Menge": "1" },
 	]
 }');
