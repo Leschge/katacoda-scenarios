@@ -38,7 +38,7 @@
     "assets": {
       "host01": [
           {"file": "data.json", "target": "/root/json", "chmod": "+x"},
-          {"file": "example.json", "target": "/root/json", "chmod": "+x"}
+          {"file": "rechnungen.js", "target": "/root/json", "chmod": "+x"}
       ]
   }
   },
