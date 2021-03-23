@@ -1,8 +1,8 @@
 {
-  "title": "ubutest",
+  "title": "JSON in PostgreSQL",
   "description": "",
   "difficulty": "Beginner",
-  "time": "15",
+  "time": "20",
   "details": {
     "steps": [
       {
