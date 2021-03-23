@@ -25,7 +25,9 @@ SELECT * FROM AlleArtikel;`{{execute}}
 
 Jetzt können wir endlich die Aggregatfunktion auf die neue Tabelle `AlleArtikel` anwenden.
 
-WITH AlleArtikel AS ( SELECT jsonb_array_elements(details->'Artikel') AS Artikel FROM rechnungen)
-SELECT SUM( CAST ( Artikel ->> 'Preis' AS FLOAT )) FROM AlleArtikel;
+`WITH AlleArtikel AS ( SELECT jsonb_array_elements(details->'Artikel') AS Artikel FROM rechnungen)
+SELECT SUM( CAST ( Artikel ->> 'Preis' AS FLOAT )) FROM AlleArtikel;`{{execute}}
 
-Bevor wir `SUM` verwenden können, müssen wir unsere Preise allerdings in Kommazahlen (`FLOAT`) konvertieren.
+Bevor wir `SUM` verwenden können, müssen wir unsere Preise allerdings mit `CAST` und `FLOAT` in Kommazahlen konvertieren.
+
+__Cool was?__
