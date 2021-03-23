@@ -4,6 +4,8 @@ Die Basics kannst du jetzt und nach diesem Schritt bist du auch für reale Probl
 Du möchtest deinen Kunden nun mitteilen, wieviel die Artikel zusammen kosten.
 Dafür brauchen wir die Aggregatfunktion `SUM`. Und weil es gar nicht so einfach ist über verschachtelte Arrays zu iterieren, fangen wir ganz langsam an.
 
+__1. Das WITH - Statement__
+
 Zuerst müssen wir die einzelnen Artikel in eine eigene Tabelle bringen und können erst dann auf die neue Tabelle unsere Aggregatfunktion anwenden.
 Für den ersten Schritt benutzen wir das `WITH`-Statement, welches so aufgebaut ist:
 ```
@@ -18,10 +20,15 @@ Mit dem ersten `SELECT` suchen wir unsere Artikel, mit dem zweiten `SELECT` kön
 SELECT * FROM AlleArtikel;`{{execute}}
 
 Die Funktion `jsonb_array_elements()` sorgt dafür, dass jeder Artikel (in unserem Fall ein Objekt) aus dem Array `Artikel` herausgelesen und in eine eigene Zeile in der neuen Tabelle `AlleArtikel` eingetragen wird.  
-Vielleicht erkennst du, dass wir nur eine Spalte mit dem Namen `jsonb_array_elements` haben. Das ist ziemlich unschön, weshalb wir ein weiteres `AS` einbauen damit unsere Spalte `Artikel` heisst.
+
+__2. Spaltenname hinzufügen__
+
+Vielleicht erkennst du, dass wir nur eine Spalte mit dem Namen `jsonb_array_elements` haben. Das ist ziemlich unschön, weshalb wir ein weiteres `AS` einbauen damit unsere temporäre Spalte absofort `Artikel` heisst.
 
 `WITH AlleArtikel AS ( SELECT jsonb_array_elements(details->'Artikel') AS Artikel FROM rechnungen)
 SELECT * FROM AlleArtikel;`{{execute}}
+
+__3. Die Aggregation__
 
 Jetzt können wir endlich die Aggregatfunktion auf die neue Tabelle `AlleArtikel` anwenden.
 
