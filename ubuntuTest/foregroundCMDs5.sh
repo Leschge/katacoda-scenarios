@@ -37,7 +37,7 @@ INSERT INTO rechnungen (rechnungsNr, details) VALUES (23776, '{
 	"Artikel":[
 		{ "Name": "Hose", "Preis": "45.00", "Menge": "2" },
 		{ "Name": "Shirt", "Preis": "24.99", "Menge": "3" },
-		{ "Name": "Socken", "Preis": "7.95", "Menge": "1" },
+		{ "Name": "Socken", "Preis": "7.95", "Menge": "1" }
 	],
 	"PremiumKunde": "true"
 }');
@@ -50,6 +50,6 @@ INSERT INTO rechnungen (rechnungsNr, details) VALUES (23777, '{
 	"KundenNr": "2465436",
 	"Adresse": { "Strasse": "Tempelstrasse 78", "PLZ":"25733", "Ort": "Berlin" },
 	"Artikel":[
-		{ "Name": "Socken", "Preis": "9.99", "Menge": "1" },
+		{ "Name": "Socken", "Preis": "9.99", "Menge": "1" }
 	]
 }');
