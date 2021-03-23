@@ -9,8 +9,8 @@ Einzige Nachteile sind, dass _jsonb_ keine Leerzeichen speichert, keine doppelte
 Wir wollen Rechnungen speichern, da eine Rechnung gleichzeitig immer alle Artikel listet, verwenden wir das verschachtelte Prinzip. (Siehe Tabelle von Schritt 1)  
 Bevor wir Einträge hinzufügen können, benötigen wir zuerst eine Tabelle.
 
-Erstelle eine neue Tabelle "rechnungenJson" mit dem Feld "rechnugnsNr" (Schlüssel [int]) und "rechnung" (JSON):
-`CREATE TABLE rechnungen (rechnungsNr INT PRIMARY KEY, details JSON);`{{execute}}
+Erstelle eine neue Tabelle "rechnungenJson" mit dem Feld "rechnugnsNr" (Schlüssel [int]) und "rechnung" (JSONB):
+`CREATE TABLE rechnungen (rechnungsNr INT PRIMARY KEY, details JSONB);`{{execute}}
 
 Überprüfe ob deine Tabelle erfolgreich erstellt wurde:
 `\d rechnungen;`{{execute}}
