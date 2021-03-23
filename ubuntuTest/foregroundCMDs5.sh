@@ -37,7 +37,7 @@ INSERT INTO rechnungen (rechnungsNr, details) VALUES (23776, '{
 	"Artikel":[
 		{ "Name": "Hose", "Preis": "45.00", "Menge": "2" },
 		{ "Name": "Shirt", "Preis": "24.99", "Menge": "3" },
-		{ "Name": "Sneaker", "Preis": "95.99", "Menge": "1" }
+		{ "Name": "Socken", "Preis": "7.95", "Menge": "1" },
 	],
 	"PremiumKunde": "true"
 }');
