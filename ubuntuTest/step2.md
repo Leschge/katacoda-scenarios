@@ -6,13 +6,15 @@ Einzige Nachteile sind, dass _jsonb_ keine Leerzeichen speichert, keine doppelte
 
 
 ### Tabelle erzeugen
-Wir wollen Rechnungen speichern, da eine Rechnung gleichzeitig immer alle Artikel und die Adresse listet, verwenden wir das verschachtelte Prinzip. (Siehe Tabelle von Schritt 1)  
+Wir wollen Rechnungen speichern, da eine Rechnung generell immer die Adresse und alle Artikel gleichzeitig listet, verwenden wir das verschachtelte Prinzip. (Siehe Tabelle von Schritt 1)  
 Bevor wir Einträge hinzufügen können, benötigen wir zuerst eine Tabelle.
 
-Erstelle eine neue Tabelle "rechnungenJson" mit dem Feld "rechnugnsNr" (Schlüssel [int]) und "rechnung" (JSONB):
+Erstelle eine neue Tabelle "rechnungen" mit dem Feld "rechnugnsNr" (Schlüssel INT) und "details" (JSONB)
+
 `CREATE TABLE rechnungen (rechnungsNr INT PRIMARY KEY, details JSONB);`{{execute}}
 
 Überprüfe ob deine Tabelle erfolgreich erstellt wurde:
+
 `\d rechnungen;`{{execute}}
 
 ### Einträge hinzufügen
@@ -51,6 +53,6 @@ Den kompletten JSON-Eintrag bekommen wir mit dem gewohnten Statement zurück:
 
 `SELECT details FROM rechnungen WHERE rechnungsNr = 23774;`{{execute}}
 
-Analog zu diesen Befehlen verhält sich das DELETE oder UPDATE Statement, was du aber sicherlich schon kennst.
+Analog zu diesen Befehlen verhält sich das DELETE oder UPDATE Statement, was du aber sicherlich schon kennst. 
 Spannender wird es im nächsten Schritt, hier arbeiten wir mit dem JSON-Eintrag direkt 😉
 
