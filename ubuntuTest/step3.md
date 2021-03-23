@@ -22,17 +22,33 @@ Den Namen kannst du also mit folgender Abfrage ausgeben:
 Die Rechnung beinhaltet zwei Verschachtelungen, die Adresse als Objekt und alle Artikel in einem Array ebenfalls als Objekt.
 
 __Objekte__
+
 Damit du den eingetragenen Ort auslesen kannst, benötigst du eine verkettete Abfrage:
+
 `SELECT details ->> 'Adresse' ->> 'Ort' FROM rechnungen;`{{execute}}
 
 Vermutlich bekommst du den Fehler `ERROR: operator does not exist: text ->> ...`, kannst du dir vorstellen weshalb?  
 Für eine verschachtelte Abfrage müssen wir mit dem oben genannten JSON(B) Operator arbeiten:
+
 `SELECT details -> 'Adresse' ->> 'Ort' FROM rechnungen;`{{execute}}
 
 Zur sicherheit gilt also: Bei mehreren Pfeilen in einer Abfrage darf immer nur der letzte mit doppeltem `>` geschrieben werden.
 Alternativ zeigen dir auch die doppelten Gänsefüßschen `"` beim Ergebnis, dass es sich gerade um JSON(B)-Objekte handelt.
+
 `SELECT details -> 'Adresse' -> 'Ort' FROM rechnungen;`{{execute}}
 
 __Arrays__
-Die Inhalte von Arrays kannst du über folgende Abfrage auslesen:
+
+Den Array mit allen Artikeln kannst du über folgende Abfrage auslesen:
+
 `SELECT details -> 'Artikel' FROM rechnungen;`{{execute}}
+
+Willst du einen speziellen Artikel, wird zusätzlich der Index (beginnend bei 0) angegeben. 
+
+`SELECT details -> 'Artikel' -> 0 FROM rechnungen;`{{execute}}
+
+PostgreSQL bietet dir auch die Möglichkeit, einen Array von hinten zu lesen (beginnend bei -1).
+
+`SELECT details -> 'Artikel' -> -1 FROM rechnungen;`{{execute}}
+
+
