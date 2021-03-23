@@ -20,7 +20,12 @@ __"Enthält" Bedingung__
 
 Manchmal ist es ganz praktisch, wenn du gleich ein ganzes Objekt oder Array in einer Abfrage vergleichen kannst. 
 Nehmen wir als Beispiel die Adresse zur Hand. Du möchtest einen Kunden anhand dieser bestimmen aber nicht 
-jedes Feld ( "Strasse", "PLZ und "Ort" ) einzeln überprüfen. Hier bietet JSONB den `@>` oder `<@` Operator an.
+jedes Feld ( "Strasse", "PLZ und "Ort" ) einzeln überprüfen. Hier bietet JSONB den `@>` oder `<@` Operator an, dieser gibt `true` zurück, wenn mindestens der Vergleichswert im Objekt oder Array gefunden wurde. Also so:
 
-`select details ->> 'Name', details ->> 'Adresse' FROM rechnungen WHERE details -> 'Adresse' @> '{ "Strasse": "Winkelgasse 9", "PLZ": "83711", "Ort": "Konstanz" }';
+`SELECT details ->> 'Name', details ->> 'Adresse' FROM rechnungen WHERE details -> 'Adresse' @> '{ "Strasse": "Winkelgasse 9", "PLZ": "83711", "Ort": "Konstanz" }';
+`{{execute}}
+
+Oder wenn du die Kunden auslesen willst, die Socken für genau 7.95 gekauft haben:
+
+`SELECT details ->> 'Name' FROM rechnungen WHERE details -> 'Artikel' @> '[{ "Name": "Socken", "Preis": "7.95" }]';
 `{{execute}}
