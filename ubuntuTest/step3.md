@@ -53,4 +53,4 @@ PostgreSQL bietet dir auch die Möglichkeit, einen Array von hinten zu lesen (be
 `SELECT details -> 'Artikel' -> -1 FROM rechnungen;`{{execute}}
 
 Gar nicht so schwer oder?  
-Dann gehts weiter zu den Aggregatfunktionen
+Dann gehts weiter zu den Aggregatfunktionen 🙌
