@@ -16,14 +16,15 @@ Dadurch kann der Rückgabewert direkt mit weiteren Befehle verknüpft werden. Od
 ```
 
 Den Namen kannst du also mit folgender Abfrage ausgeben:
+
 `SELECT details ->> 'Name' FROM rechnungen;`{{execute}}
 
 ### Verkettete Abfragen
-Die Rechnung beinhaltet zwei Verschachtelungen, die Adresse als Objekt und alle Artikel in einem Array ebenfalls als Objekt.
+Die Rechnung beinhaltet zwei Verschachtelungen, die Adresse als Objekt und alle Artikel in einem Array, ebenfalls als Objekt.
 
 __Objekte__
 
-Damit du den eingetragenen Ort auslesen kannst, benötigst du eine verkettete Abfrage:
+Damit du zum Beispiel den eingetragenen Ort auslesen kannst, benötigst du eine verkettete Abfrage:
 
 `SELECT details ->> 'Adresse' ->> 'Ort' FROM rechnungen;`{{execute}}
 
@@ -33,7 +34,7 @@ Für eine verschachtelte Abfrage müssen wir mit dem oben genannten JSON(B) Oper
 `SELECT details -> 'Adresse' ->> 'Ort' FROM rechnungen;`{{execute}}
 
 Zur sicherheit gilt also: Bei mehreren Pfeilen in einer Abfrage darf immer nur der letzte mit doppeltem `>` geschrieben werden.
-Alternativ zeigen dir auch die doppelten Gänsefüßschen `"` beim Ergebnis, dass es sich gerade um JSON(B)-Objekte handelt.
+Alternativ zeigen dir auch die Gänsefüßschen `"` beim Ergebnis, dass es sich bei der Ergebnis um JSON(B)-Objekte handelt.
 
 `SELECT details -> 'Adresse' -> 'Ort' FROM rechnungen;`{{execute}}
 
@@ -51,4 +52,5 @@ PostgreSQL bietet dir auch die Möglichkeit, einen Array von hinten zu lesen (be
 
 `SELECT details -> 'Artikel' -> -1 FROM rechnungen;`{{execute}}
 
-
+Gar nicht so schwer oder?  
+Dann gehts weiter zu den Aggregatfunktionen
