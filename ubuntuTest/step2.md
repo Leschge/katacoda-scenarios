@@ -49,6 +49,6 @@ Den kompletten JSON-Eintrag bekommen wir mit dem gewohnten Statement zurück:
 
 `SELECT details FROM rechnungen WHERE rechnungsNr = 23774;`{{execute}}
 
-Analog zu diesen Befehlen verhält sich das DELETE oder UPDATE Statement.
+Analog zu diesen Befehlen verhält sich das DELETE oder UPDATE Statement, was du aber sicherlich schon kennst.
 Spannender wird es im nächsten Schritt, hier arbeiten wir mit dem JSON-Eintrag direkt 😉
 
