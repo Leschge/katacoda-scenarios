@@ -29,7 +29,13 @@ Klicke auf die Datei unten um dir einen besseren Überblick über die Daten zu b
 `rechnungen.js`{{open}} 
 
 
-Alle Namen als JSONB-Objekt kannst du mit folgender Abfrage ausgeben:
-`SELECT details -> 'Name' FROM rechnungen;`{{execute}}
+Wie du sehen kannst ist ebenfalls die Adresse hinzugekommen, wir möchten alle eingetragene Orte im System ausgeben, dafür benötigen wir einen verkettete Abfrage:
+`SELECT details ->> 'Adresse' ->> 'Ort' FROM rechnungen;`{{execute}}
 
-Siehst du die doppelten Gänsefüßschen `"` ? Die zeigen dir an, dass es sich gerade um JSON(B)-Objekte handelt.
+Vermutlich bekommst du den Fehler ´ERROR: operator does not exist: text ->> ...´, kannst du dir vorstellen weshalb?  
+Für eine verschachtelte Abfrage müssen wir mit dem JSON(B) Operator arbeiten:
+`SELECT details -> 'Adresse' ->> 'Ort' FROM rechnungen;`{{execute}}
+
+Zur sicherheit gilt also: Bei mehreren Pfeilen darf immer nur den letzten mit doppeltem `>` geschrieben werden.
+Alternativ zeigen dir auch die doppelten Gänsefüßschen `"`, dass es sich gerade um JSON(B)-Objekte handelt.
+`SELECT details -> 'Adresse' -> 'Ort' FROM rechnungen;`{{execute}}
