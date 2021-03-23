@@ -6,7 +6,7 @@ Einzige Nachteile sind, dass _jsonb_ keine Leerzeichen speichert, keine doppelte
 
 
 ### Tabelle erzeugen
-Wir wollen Rechnungen speichern, da eine Rechnung gleichzeitig immer alle Artikel listet, verwenden wir das verschachtelte Prinzip. (Siehe Tabelle von Schritt 1)  
+Wir wollen Rechnungen speichern, da eine Rechnung gleichzeitig immer alle Artikel und die Adresse listet, verwenden wir das verschachtelte Prinzip. (Siehe Tabelle von Schritt 1)  
 Bevor wir Einträge hinzufügen können, benötigen wir zuerst eine Tabelle.
 
 Erstelle eine neue Tabelle "rechnungenJson" mit dem Feld "rechnugnsNr" (Schlüssel [int]) und "rechnung" (JSONB):
@@ -23,6 +23,7 @@ rechnungsNr = 23774
 	"Name":"Hans Peter", 
 	"Datum":"22-03-2021 23:32:00", 
 	"KundenNr": "2465433",
+	"Adresse": {"Strasse":"Silberalle 12","PLZ":"73357","Ort":"München"},
 	"Artikel":[
 		{ "Name": "Pullover", "Preis": "35.00", "Menge": "1" },
 		{ "Name": "Socken", "Preis": "7.95", "Menge": "3" },
@@ -37,6 +38,7 @@ Wir benutzen das wie von SQL gewohnte INSERT Statement:
 	"Name":"Hans Peter", 
 	"Datum":"22-03-2021 23:32:00", 
 	"KundenNr": "2465433",
+	"Adresse": {"Strasse":"Silberalle 12","PLZ":"73357","Ort":"München"},
 	"Artikel":[
 		{ "Name": "Pullover", "Preis": "35.00", "Menge": "1" },
 		{ "Name": "Socken", "Preis": "7.95", "Menge": "3" },
