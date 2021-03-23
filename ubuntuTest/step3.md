@@ -20,12 +20,16 @@ Ein Beispiel für einen Verkettente
 ```
 
 Alle Namen kannst du also mit folgender Abfrage ausgeben:
-`SELECT details -> 'Name' FROM rechnungen;`{{execute}}
-Ist dir aufgefallen, dass mehr Namen hinzugekommen sind?
-Die haben wir lediglich zum besseren Testen heimlich hinzugefügt.
-Klicke auf die Datei unten um dir einen besseren Überblick zu beschaffen:
+`SELECT details ->> 'Name' FROM rechnungen;`{{execute}}
+
+Ist dir aufgefallen, dass mehr Namen hinzugekommen sind?  
+Die haben wir lediglich zum besseren Testen heimlich hinzugefügt.  
+Klicke auf die Datei unten um dir einen besseren Überblick über die Daten zu beschaffen:
 
 `rechnungen.js`{{open}} 
 
-Übersicht aller Tabellen:
-`\dt+`
+
+Alle Namen als JSONB-Objekt kannst du mit folgender Abfrage ausgeben:
+`SELECT details -> 'Name' FROM rechnungen;`{{execute}}
+
+Siehst du die doppelten Gänsefüßschen `"` ? Die zeigen dir an, dass es sich gerade um JSON(B)-Objekte handelt.
