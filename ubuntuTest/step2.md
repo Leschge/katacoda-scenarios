@@ -58,4 +58,4 @@ Spannender wird es im nächsten Schritt, hier arbeiten wir mit dem JSON-Eintrag 
 
 Klicke am besten noch auf die Datei unten, damit du dir die Struktur unserer Rechnung vor Augen holen kannst, fall du sie brauchst.
 
-StrukturRechnung.js{{open}}
+`StrukturRechnung.js`{{open}}
