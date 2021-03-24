@@ -1,6 +1,5 @@
-### JSON Abfragen erzeugen
-Um JSON-Abfragen erzeugen zu können, muss dir bewusst sein, dass PostgreSQL zwei verschiedene Operatoren für Abfragen zur Verfügung stellt.
 
+Um JSON-Abfragen erzeugen zu können, muss dir bewusst sein, dass PostgreSQL zwei verschiedene Operatoren für Abfragen zur Verfügung stellt.
 
 Der `->>` Operator  gibt den Rückgabewert als Text zurück.  
 Diesen benutzt du in der Regel für Ergebnisse, die direkt von deiner Anwendung konsumiert werden oder zusätzlich in einen anderen Datentyp konvertiert werden müssen.
