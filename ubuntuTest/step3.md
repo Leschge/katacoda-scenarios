@@ -1,9 +1,9 @@
 ### JSON Abfragen erzeugen
-Um JSON-Abfragen erzeugen zu können, muss dir bewusst sein, dass PostgreSQL zwei verschiedene Operanten für Abfragen zur Verfügung stellt.
+Um JSON-Abfragen erzeugen zu können, muss dir bewusst sein, dass PostgreSQL zwei verschiedene Operatoren für Abfragen zur Verfügung stellt.
 
 
 Der `->>` Operator  gibt den Rückgabewert als Text zurück.  
-Diesen benutzt du in der Regel für Ergebnisse, die direkt von deiner Anwendung konsumiert werden.
+Diesen benutzt du in der Regel für Ergebnisse, die direkt von deiner Anwendung konsumiert werden oder zusätzlich in einen anderen Datentyp konvertiert werden müssen.
 ```
 '{"a": "value"}'::json->>'a'  = value
 ```
@@ -32,13 +32,14 @@ Damit du zum Beispiel den eingetragenen Ort auslesen kannst, benötigst du eine 
 
 `SELECT details ->> 'Adresse' ->> 'Ort' FROM rechnungen;`{{execute}}
 
-Vermutlich bekommst du den Fehler `ERROR: operator does not exist: text ->> ...`, kannst du dir vorstellen weshalb?  
-Für eine verschachtelte Abfrage müssen wir mit dem oben genannten JSON(B) Operator arbeiten:
+Die obere Abfrage erzeugt den Fehler `ERROR: operator does not exist: text ->> ...`  
+Kannst du dir vorstellen weshalb?  
+Für eine verschachtelte Abfrage müssen wir mit dem oben genannten JSON(B) Operator arbeiten (`->`):
 
 `SELECT details -> 'Adresse' ->> 'Ort' FROM rechnungen;`{{execute}}
 
 Zur sicherheit gilt also: Bei mehreren Pfeilen in einer Abfrage darf immer nur der letzte mit doppeltem `>` geschrieben werden.
-Alternativ zeigen dir auch die Gänsefüßschen `"` beim Ergebnis, dass es sich bei der Ergebnis um JSON(B)-Objekte handelt.
+Alternativ zeigen dir auch die Gänsefüßschen `"` um das Ergebnis, dass es sich um JSON(B)-Objekte handelt.
 
 `SELECT details -> 'Adresse' -> 'Ort' FROM rechnungen;`{{execute}}
 
