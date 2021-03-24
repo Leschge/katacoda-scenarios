@@ -1,4 +1,3 @@
-### Aggregatfunktionen
 Die Basics kannst du jetzt und nach diesem Schritt bist du auch für reale Probleme gewappnet.
 
 Du möchtest deinen Kunden nun mitteilen, wieviel die Artikel zusammen kosten.
