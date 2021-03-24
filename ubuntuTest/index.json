@@ -41,8 +41,8 @@
     },
     "assets": {
       "host01": [
-          {"file": "data.json", "target": "/root/json", "chmod": "+x"},
-          {"file": "rechnungen.js", "target": "/root/json", "chmod": "+x"}
+          {"file": "StrukturRechnung.js", "target": "/root/json", "chmod": "+x"},
+          {"file": "StrukturRechnungen.js", "target": "/root/json", "chmod": "+x"}
       ]
   }
   },
