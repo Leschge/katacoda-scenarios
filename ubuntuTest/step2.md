@@ -27,9 +27,9 @@ rechnungsNr = 23774
 	"KundenNr": "2465433",
 	"Adresse": { "Strasse": "Silberalle 12", "PLZ": "73357","Ort": "München" },
 	"Artikel":[
-		{ "Name": "Pullover", "Preis": "35.00", "Menge": "1" },
-		{ "Name": "Socken", "Preis": "7.95", "Menge": "3" },
-		{ "Name": "Jeans", "Preis": "65.99", "Menge": "1" }
+		{ "Name": "Pullover", "Preis": "35.00" },
+		{ "Name": "Socken", "Preis": "7.95" },
+		{ "Name": "Jeans", "Preis": "65.99" }
 	]
 }')
 ```
@@ -42,9 +42,9 @@ Wir benutzen das wie von SQL gewohnte INSERT Statement:
 	"KundenNr": "2465433",
 	"Adresse": { "Strasse": "Silberalle 12", "PLZ": "73357","Ort": "München" },
 	"Artikel":[
-		{ "Name": "Pullover", "Preis": "35.00", "Menge": "1" },
-		{ "Name": "Socken", "Preis": "7.95", "Menge": "3" },
-		{ "Name": "Jeans", "Preis": "65.99", "Menge": "1" }
+		{ "Name": "Pullover", "Preis": "35.00" },
+		{ "Name": "Socken", "Preis": "7.95" },
+		{ "Name": "Jeans", "Preis": "65.99" }
 	]
 }');`{{execute}}
 
@@ -54,5 +54,5 @@ Den kompletten JSON-Eintrag bekommen wir mit dem gewohnten Statement zurück:
 `SELECT details FROM rechnungen WHERE rechnungsNr = 23774;`{{execute}}
 
 Analog zu diesen Befehlen verhält sich das DELETE oder UPDATE Statement, was du aber sicherlich schon kennst. 
-Spannender wird es im nächsten Schritt, hier arbeiten wir mit dem JSON-Eintrag direkt 😉
+Spannender wird es im nächsten Schritt, hier arbeiten wir mit dem JSON-Eintrag direkt 🧐
 
