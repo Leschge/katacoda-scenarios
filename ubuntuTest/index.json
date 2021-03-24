@@ -6,29 +6,33 @@
   "details": {
     "steps": [
       {
-        "title": "Step 1",
+        "title": "Einleitung",
         "text": "step1.md"
       },
       {
-        "title": "Step 2",
+        "title": "Vorbereitung",
         "text": "step2.md"
       },
       {
-        "title": "Step 3",
+        "title": "JSON Abfragen",
         "text": "step3.md"
       },
       {
-        "title": "Step 4",
+        "title": "Aggregatfunktionen",
         "text": "step4.md"
       },
       {
-        "title": "Step 5",
+        "title": "Bedingte Abfragen",
         "text": "step5.md",
         "code": "foregroundCMDs5.sh"
       },
       {
-        "title": "Step 6",
+        "title": "GIN Index",
         "text": "step6.md"
+      },
+      {
+        "title": "Ende",
+        "text": "step7.md"
       }
     ],
     "intro": {
