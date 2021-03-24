@@ -1,11 +1,9 @@
-### WHERE - Statement
-
 Damit wir das `WHERE`-Statement schneller benutzen können, sind ein paar weitere Einträge in unserer "rechnungen"-Tabelle hinzugekommen.  
 Klicke auf die Datei unten, wenn du dir einen besseren Überblick über die neuen Daten in der Tabelle beschaffen willst:
 
 `StrukturRechnungen.js`{{open}} 
 
-__Einfache WHERE Bedingung__
+### Einfache WHERE Bedingung
 
 Du möchtest beispielsweise für alle Rechnungen, die nach dem 22.03.2021 erstellt wurden, den Namen und das Datum ausgeben.
 Dafür benutzt du deine bisherigen SQL Kenntnisse einfach zusammen mit dem eben gelernten.
@@ -16,7 +14,7 @@ Die Abfrage sieht dann so aus:
 
 Die `to_date()` Funktion konvertiert den String in einen `timestamp` mit dem Format (DD-MM-YYYY) um den Vergleich ausführen zu können.
 
-__"Enthält" Bedingung__
+### "Enthält" Bedingung
 
 Manchmal ist es ganz praktisch, wenn du gleich ein ganzes Objekt oder Array in einer Abfrage vergleichen kannst. 
 Nehmen wir als Beispiel die Adresse zur Hand. Du möchtest einen Kunden anhand dieser bestimmen, aber nicht 
