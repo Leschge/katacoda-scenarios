@@ -3,7 +3,7 @@
 Damit wir das `WHERE`-Statement schneller benutzen können, sind ein paar weitere Einträge in unserer "rechnungen"-Tabelle hinzugekommen.  
 Klicke auf die Datei unten, wenn du dir einen besseren Überblick über die neuen Daten in der Tabelle beschaffen willst:
 
-`rechnungenWHERE.js`{{open}} 
+`StrukturRechnungen.js`{{open}} 
 
 __Einfache WHERE Bedingung__
 
