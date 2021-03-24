@@ -56,6 +56,6 @@ Den kompletten JSON-Eintrag bekommen wir mit dem gewohnten Statement zurück:
 Analog zu diesen Befehlen verhält sich das DELETE oder UPDATE Statement, was du aber sicherlich schon kennst. 
 Spannender wird es im nächsten Schritt, hier arbeiten wir mit dem JSON-Eintrag direkt 🧐
 
-Klicke am besten noch auf die Datei unten, damit du dir die Struktur unserer Rechnung vor Augen holen kannst, fall du sie brauchst.
+Klicke am besten noch auf die Datei unten, damit du dir immer die Struktur unserer Rechnung vor Augen holen kannst, wenn du sie brauchst.
 
 `StrukturRechnung.js`{{open}}
