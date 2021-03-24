@@ -19,30 +19,34 @@ Nachfolgend sind nochmal zwei Beispiele zur Verdeutlichung und eine Faustregel w
 __Die Normalform__
 ```
 Schlüssel = rechnung::1
-{ "Name":"Hans Peter", "Datum":22-03-2021 23:32:00", "BuchungsNr": "2465433" }
+{ "Name":"Hans Peter", "Datum":22-03-2021 23:32:00", "KundenNr": "2465433" }
+
+Schlüssel = adresse:64
+{ "KundenNr":"2465433", "Name": "Jeans, "Preis": "65.99" }
 
 Schlüssel = artikel:884
-{ "Rechnung":"1", "Name": "Pullover, "Preis": "35.00", "Menge": "1" }
+{ "Rechnung":"1", "Name": "Pullover, "Preis": "35.00" }
 
 Schlüssel = artikel:889
-{ "Rechnung":"1", "Name": "Socken, "Preis": "7.95", "Menge": "3" }
+{ "Rechnung":"1", "Name": "Socken, "Preis": "7.95" }
 
 Schlüssel = artikel:882
-{ "Rechnung":"1", "Name": "Jeans, "Preis": "65.99", "Menge": "1" }
+{ "Rechnung":"1", "Name": "Jeans, "Preis": "65.99" }
 ```
 
 __Verschachtelt__
 ```
 Schlüssel = rechnung::1
 { 
-  "Name":"Hans Peter",
-  "Datum":22-03-2021 23:32:00", 
-  "BuchungsNr": "2465433" 
-  "Artikel":[
-    { "Name": "Pullover, "Preis": "35.00", "Menge": "1" },
-    { "Name": "Socken, "Preis": "7.95", "Menge": "3" },
-    { "Name": "Jeans, "Preis": "65.99", "Menge": "1" }
-  ]
+	"Name":"Hans Peter", 
+	"Datum":"22-03-2021 23:32:00", 
+	"KundenNr": "2465433",
+	"Adresse": { "Strasse": "Silberalle 12", "PLZ": "73357","Ort": "München" },
+	"Artikel":[
+		{ "Name": "Pullover", "Preis": "35.00" },
+		{ "Name": "Socken", "Preis": "7.95" },
+		{ "Name": "Jeans", "Preis": "65.99" }
+	]
 }
 ```
 
