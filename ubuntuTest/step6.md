@@ -1,23 +1,19 @@
 
-Wie du aus Schritt 2 weißt, benutzen wir den _jsonb_ Datentyp. Dadurch ist es uns nun möglich Indexierung innerhalb unserer JSON-Einträge vorzunehmen.
+Wie du aus Schritt 2 weißt, benutzen wir den _jsonb_ Datentyp. Dadurch ist es uns möglich Indexierung innerhalb unserer JSON-Einträge vorzunehmen.
 
-PostgreSQL bietet verschiedene Arten oder gar Infrastrukturen von Indizes für verschiedene Aufgabenfelder an.
-Dazu gehören B-Trees, Hashs, GINs und noch ein Paar mehr. Alle hier zu erklären würde leider den Rahmen sprengen, weshalb wir uns nur auf die eben genannten, für _jsonb_ gängisten Arten, beschränken.
+PostgreSQL bietet verschiedene Arten oder gar Infrastrukturen von Indizes für jweils verschiedene Aufgabenfelder an.
+Dazu gehören B-Trees, Hashs, GINs und noch ein Paar mehr. Alle hier zu erklären würde leider den Rahmen sprengen. Deshalb beschränken wir uns auf die für _jsonb_ gängisten Arten.  
 Übrigens, wird beim `CREATE INDEX` kein Indextyp angegeben, wird standardmäßig ein B-Tree erstellt.
 
-`StrukturRechnungen.js`{{open}} 
-
-### Anwendung für Indizes
-
-*B-Tree*  
-Ist geeignet für Gleicheits- und Bereichsabfragen. Verwendete Operanten sind `<` `<=` `=` `>=` `>`. Zusätzlich ist dieser Index für Teilstringabfragen zu Beginn eines Strings sinnvoll. Z.B. `... LIKE 'Kurz%' ...` wobei alle Strings wie _Kurzarmhemd_, _Kurze Hosen_, ... zurückgegeben werden.
+### B-Tree
+Ist geeignet für Gleicheits- und Bereichsabfragen. Verwendete Operanten sind hierfür `<` `<=` `=` `>=` oder `>`. Zusätzlich ist dieser Index für Teilstringabfragen zu Beginn eines Strings sinnvoll. Z.B. `... LIKE 'Kurz%' ...` wobei alle Strings wie _Kurzarmhemd_, _Kurze Hosen_, ... zurückgegeben werden.
 
 
-*Hash*
-Ist lediglich für rudimentäre Gleichheitsabfragen geeignet. Verwendeter Operant ist dabei das `=` Zeichen. 
+### Hash 
+Ist lediglich für rudimentäre Gleichheitsabfragen geeignet. Verwendeter Operant ist dabei das `=`. 
 
 
-*GIN*
+### GIN
 Der GIN (Generalized Inverted Indexes) ist genau genommen eine Infrastruktur von Indizes und bietet multiple Arten an. Das bedeutet, dass GIN ebenfalls standardmäßig ein B-Tree Index erstellt, aber auch ein Trigram Index oder Array Index erstellen kann.
 
 
