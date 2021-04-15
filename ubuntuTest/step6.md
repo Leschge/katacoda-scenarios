@@ -10,17 +10,18 @@ Ist geeignet für Gleicheits- und Bereichsabfragen. Verwendete Operanten sind hi
 Willst du beispielsweise häufig alle Rechnungen, bei denen der Name mit "Mich" anfängt, so ist ein B-Tree geeignet. Die passende Abfrage lautet so:
 `SELECT * FROM rechnungen WHERE details ->> 'Name' LIKE 'Mich%';`{{execute}}
 
-Die Kosten für solch eine Abfrage kannst du mit `EXPLAIN` ausgeben:
+Die Kosten für solch eine Abfrage kannst du mit `EXPLAIN` ausgeben:  
 `EXPLAIN SELECT * FROM rechnungen WHERE details ->> 'Name' LIKE 'Mich%';`{{execute}}
 
-Vermutlich findest du einen Wert von 29.05.   
-Jetzt erstellen wir einen Index für die Kundennamen:
+Vermutlich findest du einen Wert von `29.05`.   
+Jetzt erstellen wir einen Index für die Kundennamen:  
 `CREATE INDEX ind_namen ON rechnungen USING BTREE ((details->'Name'));`{{execute}}
-Und lassen uns erneut die Kosten ausgeben:
+
+Und lassen uns erneut die Kosten ausgeben:  
 `EXPLAIN SELECT * FROM rechnungen WHERE details ->> 'Name' LIKE 'Mich%';`{{execute}}
 
 Jetzt solltest du einen deutlich geringeren Wert statt die `29.05` sehen.  
-Zeitlich solltest du bei unseren 4 Einträgen keinen festellen. 
+Zeitlich solltest du bei unseren 4 Einträgen keinen Unterschied festellen.  
 **Ein Index lohnt sich oft erst ab mehreren Tausend Einträgen.**
 
 ### Hash 
