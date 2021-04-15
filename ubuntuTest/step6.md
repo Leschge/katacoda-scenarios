@@ -6,7 +6,7 @@ Dazu gehören B-Trees, Hashes, GINs und noch ein Paar mehr. Alle hier zu erklär
 Übrigens, wird beim `CREATE INDEX` kein Indextyp angegeben, wird standardmäßig ein B-Tree erstellt.
 
 ### B-Tree
-Ist geeignet für Gleicheits- und Bereichsabfragen. Verwendete Operanten sind hierfür `<` `<=` `=` `>=` oder `>`. Zusätzlich ist dieser Index für Teilstringabfragen zu Beginn eines Strings sinnvoll. Z.B. `... LIKE 'Kurz%' ...` wobei alle Strings wie _Kurzarmhemd_, _Kurze Hosen_, ... zurückgegeben werden.
+Ist geeignet für Gleicheits- und Bereichsabfragen. Verwendete Operanten sind hierfür `<` `<=` `=` `>=` oder `>`. Zusätzlich ist dieser Index für Teilstringabfragen zu Beginn eines Strings sinnvoll. Z.B. `SELECT * FROM artikel WHERE details -> Name LIKE 'Kurz%' ;` wobei alle Strings wie _Kurzarmhemd_, _Kurze Hosen_, ... zurückgegeben werden.
 
 
 ### Hash 
