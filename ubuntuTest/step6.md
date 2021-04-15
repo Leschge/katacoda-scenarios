@@ -1,1 +1,45 @@
 
+Wie du aus Schritt 2 weißt, benutzen wir den _jsonb_ Datentyp. Dadurch ist es uns nun möglich Indexierung innerhalb unserer JSON-Einträge vorzunehmen.
+
+PostgreSQL bietet verschiedene Arten oder gar Infrastrukturen von Indizes für verschiedene Aufgabenfelder an.
+Dazu gehören B-Trees, Hashs, GINs und noch ein Paar mehr. Alle hier zu erklären würde leider den Rahmen sprengen, weshalb wir uns nur auf die eben genannten, für _jsonb_ gängisten Arten, beschränken.
+Übrigens, wird beim `CREATE INDEX` kein Indextyp angegeben, wird standardmäßig ein B-Tree erstellt.
+
+`StrukturRechnungen.js`{{open}} 
+
+### Anwendung für Indizes
+
+*B-Tree*  
+Ist geeignet für Gleicheits- und Bereichsabfragen. Verwendete Operanten sind `<` `<=` `=` `>=` `>`. Zusätzlich ist dieser Index für Teilstringabfragen zu Beginn eines Strings sinnvoll. Z.B. `... LIKE 'Kurz%' ...` wobei alle Strings wie _Kurzarmhemd_, _Kurze Hosen_, ... zurückgegeben werden.
+
+
+*Hash*
+Ist lediglich für rudimentäre Gleichheitsabfragen geeignet. Verwendeter Operant ist dabei das `=` Zeichen. 
+
+
+*GIN*
+Der GIN (Generalized Inverted Indexes) ist genau genommen eine Infrastruktur von Indizes und bietet multiple Arten an. Das bedeutet, dass GIN ebenfalls standardmäßig ein B-Tree Index erstellt, aber auch ein Trigram Index oder Array Index erstellen kann.
+
+
+
+
+
+`SELECT details ->> 'Name', details ->> 'Datum' FROM rechnungen WHERE to_date(details ->> 'Datum', 'DD-MM-YYYY') > to_date('22-03-2021', 'DD-MM-YYYY');
+`{{execute}}
+
+Die `to_date()` Funktion konvertiert den String in einen `timestamp` mit dem Format (DD-MM-YYYY) um den Vergleich ausführen zu können.
+
+### "Enthält" Bedingung
+
+Manchmal ist es ganz praktisch, wenn du gleich ein ganzes Objekt oder Array in einer Abfrage vergleichen kannst. 
+Nehmen wir als Beispiel die Adresse zur Hand. Du möchtest einen Kunden anhand dieser bestimmen, aber nicht 
+jedes Feld ( "Strasse", "PLZ und "Ort" ) einzeln überprüfen. Hier bietet JSONB den `@>` oder `<@` Operator an, dieser gibt `true` zurück, wenn mindestens der Vergleichswert im Objekt oder Array gefunden wurde.   
+Für unsere Adresse sieht die Abfrage so aus:
+
+`SELECT details ->> 'Name', details ->> 'Adresse' FROM rechnungen WHERE details -> 'Adresse' @> '{ "Strasse": "Winkelgasse 9", "PLZ": "83711", "Ort": "Konstanz" }';
+`{{execute}}
+
+Oder wenn du alle Kunden auslesen willst, die Socken für genau 7.95 gekauft haben:
+
+`SELECT details ->> 'Name' FROM rechnungen WHERE details -> 'Artikel' @> '[{ "Name": "Socken", "Preis": "7.95" }]';
+`{{execute}}
