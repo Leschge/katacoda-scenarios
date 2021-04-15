@@ -16,7 +16,7 @@ INSERT INTO rechnungen (rechnungsNr, details) VALUES (23774, '{
 
 
 INSERT INTO rechnungen (rechnungsNr, details) VALUES (23775, '{ 
-	"Name": "Sabine Meerson", 
+	"Name": "Michelle Seeger", 
 	"Datum": "22-03-2021 10:45:00", 
 	"KundenNr": "2465434",
 	"Adresse": { "Strasse": "Rotebühlplatz 40", "PLZ": "74211", "Ort": "Stuttgart" },
