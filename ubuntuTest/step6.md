@@ -27,16 +27,19 @@ Und lassen uns erneut die Kosten ausgeben:
 
 `EXPLAIN SELECT * FROM rechnungen WHERE details ->> 'Name' LIKE 'Mich%';`{{execute}}
 
-Nun solltest du einen deutlich geringeren Wert statt die `29.05` sehen. Wir tun damit unserer Anwendung und der Datenbank einen Gefallen.  
+Nun solltest du einen deutlich geringeren Wert statt die `29.05` sehen. Wir tun damit unserer Anwendung und der Datenbank also einen Gefallen.  
 Einen zeitlichen Unterschied solltest du bei unseren 4 Einträgen jedoch nicht festellen.  
 **Denn ein Index lohnt sich oft erst ab mehreren tausend Einträgen** und ab dann ist auch die Berechnungszeit deutlich geringer.
 
 ### Hash 
-Der Hash Index ist  lediglich für rudimentäre Gleichheitsabfragen geeignet. D.h. wenn der verwendete Operant `=` ist. 
+Der Hash Index ist  lediglich für rudimentäre Gleichheitsabfragen geeignet. D.h. wenn der verwendete Operant in der Abfrage `=` ist. 
 
 
 ### GIN
 Der GIN ist genau genommen eine Infrastruktur von Indizes und bietet [mehrere Arten](https://www.postgresql.org/docs/11/gin-examples.html) an. Standardmäßig erstellt der GIN Index aber ebenfalls einen B-Tree, weshalb wir hier nicht weiter ausschweifen.  
-Er ist für zusammengesetzte Daten und für Abfragen, die nach Werten innerhalb diesen zusammengesetzten Daten suchen, geeignet. Um zu prüfen, ob ein Schlüssel oder Wert existiert werden die Operanten `?` `?&` `?|` verwendet. Den Operant `@>` kennst du ja aus vorherigem Schritt. 
+Er ist für zusammengesetzte Daten und für Abfragen, die nach Werten innerhalb diesen zusammengesetzten Daten suchen, geeignet. Also für Abfragen mit dem schon zuvor benutzten `@>` Operant. Zusätzlich ist der GIN Index dazu geeignet um zu prüfen, ob ein Schlüssel oder Wert existiert. Dafür werden die Operanten `?` `?&` `?|` verwendet.
 
 
+Wie du siehst, solltest du also je nach Art deiner Abfragen auf verschiedene Index Arten setzen, um ein Ergebnis schnell zurück zu bekommen.
+
+Und das wars auch schon, auf der nächsten Seite findest du noch eine Zusammenfassung und ein paar Good-To-Knows.
