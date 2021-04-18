@@ -1,6 +1,6 @@
 Die Basics kannst du jetzt und nach diesem Schritt bist du auch für reale Probleme gewappnet.
 
-Du möchtest deinen Kunden nun mitteilen, wieviel die Artikel zusammen kosten.
+Du möchtest deinen Kunden nun mitteilen, wieviel die Artikel zusammen gekosten haben.
 Dafür brauchen wir die Aggregatfunktion `SUM`. Und weil es gar nicht so einfach ist über verschachtelte Arrays zu iterieren, fangen wir ganz langsam an.
 
 __1. Das WITH - Statement__
@@ -37,3 +37,5 @@ SELECT SUM( CAST ( Artikel ->> 'Preis' AS FLOAT )) FROM AlleArtikel;`{{execute}}
 Bevor wir `SUM` verwenden können, müssen wir unsere Preise allerdings mit `CAST` und `FLOAT` in Kommazahlen konvertieren.
 
 __Cool was?__
+Der nächste Schritt befasst sich mit bedingten Abfragen 👨‍🏫
+viel Spaß
