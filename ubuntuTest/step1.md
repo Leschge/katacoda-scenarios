@@ -8,14 +8,13 @@ JSON kann lediglich Daten als String abspeichern, weshalb du bei verschiedenen A
 Konkret lässt sich also sagen, dass besonders Anwendungen die Daten erzeugen, aber auch im selben Format einlesen, vom JSON-Format profitieren können.
 
 ### Wie strukturiert sind deine Daten?
-Sind deine Daten besonders strukturiert und einheitlich, eignen sich normale Tabellen oft besser. Sind sie allerdings nicht immer strukturier oder es ist dir gar nicht möglich die Struktur im vorhinein zu kennen, kann das JSON-Format Abhilfe beschaffen. Beispielsweise ist es sehr schwierig Fehler aus Programmen zu protokollieren, da diese meist beliebig oft verschachtelt sind. Ein anderes Beispiel sind Pilotenprojekte bei denen sich die Datenstruktur noch ändern kann. Sollten neue Daten hinzukommen, so reicht es einfach ein neues Feld an den JSON-String anzufügen, statt eine komplett neue Tabelle zu erstellen.
+Sind deine Daten strukturiert und einheitlich, eignen sich normale Tabellen oft besser. Sind sie allerdings nicht immer strukturier oder es ist dir gar nicht möglich die Struktur im vorhinein zu kennen, kann das JSON-Format Abhilfe beschaffen. Beispielsweise ist es sehr schwierig Fehler aus Programmen zu protokollieren, da diese meist beliebig oft verschachtelt sind. Ein anderes Beispiel sind IoT- oder Pilotenprojekte bei denen sich die Datenstruktur noch ändern kann. Sollten neue Daten hinzukommen, so genügt es  ein neues Feld an den JSON-String anzufügen, statt eine komplett neue Tabelle zu erstellen.
 
 ### Wie stark sind deine Daten miteinander verknüpft?
 Der letzte und wohl wichtigste Punkt ist die Modelierung von Beziehungen im JSON-Format. Ist die Mehrzahl deiner Daten getrennt aber untereinander verknüpft und strukturiert, eignen sich relationale Datenbanken offensichtlich am besten. Sie sind dafür konzipiert einzelne Einträge aus verschiedenen Tabellen als Ganzes auszugeben und bieten demensprechend mächtige aber einfache Abfragen an.  
 Das JSON-Format hingegen ist besonders gut für Verschachtelungen innerhalb des JSON-Formats, aber eben nicht für getrennt erstellte Daten geeignet. Sind die Daten verknüpft, in ihrer Erzeugung jedoch getrennt, sollte man diese wie bei relationalen Datenbanken normalisieren. Im JSON-Format ist jedes Kind und somit jeder Datenbankeintrag ein eigener JSON-String, beziehungsweise Dokument. Dieser wird über ein zusätzlicher Schlüssel zum Elternteil verknüpft. Die Verwendung vom JSON-Format ist bei einer getrennten Datenerzeugung aber eher unkonventionell, weshalb hier eventuell relationale Datenbanken bevorzugt werden sollten.
 
 Nachfolgend sind nochmal zwei Beispiele zur Verdeutlichung.  
-Darunter ist eine Faustregel, wann verknüpfte Daten wie im JSON-Format gespeichert werden sollten.
 
 __Die Normalform__
 ```
@@ -51,7 +50,8 @@ Schlüssel = rechnung::1
 }
 ```
 
-__Faustregel__
+Zusätzlich zum Beispiel ist hier noch eine Faustregel, wann verknüpfte Daten wie im JSON-Format gespeichert werden sollten.
+Die Bedingung zeigt immer die Art der Datenbeziehung oder wie die Daten gelesen bzw. gespeichert werden.
 
 | Bedingung | Format |
 | ------------- |:-------------:|
