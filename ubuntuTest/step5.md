@@ -28,3 +28,6 @@ Oder wenn du alle Kunden auslesen willst, die Socken für genau 7.95 gekauft hab
 
 `SELECT details ->> 'Name' FROM rechnungen WHERE details -> 'Artikel' @> '[{ "Name": "Socken", "Preis": "7.95" }]';
 `{{execute}}
+
+Und schon bist du beim letzten Schritt,  
+den Indizes😊
