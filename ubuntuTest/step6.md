@@ -6,26 +6,33 @@ Dazu gehören B-Trees, Hashes, GINs und noch ein Paar mehr. Alle hier zu erklär
 Übrigens, wird beim `CREATE INDEX` kein Indextyp angegeben, wird standardmäßig ein B-Tree erstellt.
 
 ### B-Tree
-Ist geeignet für Gleicheits- und Bereichsabfragen. Verwendete Operanten sind hierfür `<` `<=` `=` `>=` oder `>`. Zusätzlich ist dieser Index für Teilstringabfragen zu Beginn eines Strings sinnvoll.  
-Willst du beispielsweise häufig alle Rechnungen, bei denen der Name mit "Mich" anfängt, so ist ein B-Tree geeignet. Die passende Abfrage lautet so:
+der B-Tree ist geeignet für Gleicheits- und Bereichsabfragen. Verwendete Operanten sind hierfür `<` `<=` `=` `>=` oder `>`. Zusätzlich ist dieser Index für Teilstringabfragen zu Beginn eines Strings sinnvoll, dafür wird der `LIKE` Operator benutzt.
+Willst du also beispielsweise häufig alle Rechnungen, bei denen der Kundenname mit "Mich" anfängt ausgeben, so ist ein B-Tree Index geeignet. Die passende Abfrage dazu lautet so:
+
 `SELECT * FROM rechnungen WHERE details ->> 'Name' LIKE 'Mich%';`{{execute}}
 
-Die Kosten für solch eine Abfrage kannst du mit `EXPLAIN` ausgeben:  
+Als Ergebnis bekommst du demnach "**Mich**elle Seeger" und "**Mich**ael Müller".
+
+Natürlich benötigt jede Abfrage im System eine gewisse Berechnungszeit und auch sogenannte Berechnungskosten.  
+Die Berechnungskosten für eine Abfrage kannst du mit einem `EXPLAIN` vor der eigentlichen Abfrage ausgeben:  
+
 `EXPLAIN SELECT * FROM rechnungen WHERE details ->> 'Name' LIKE 'Mich%';`{{execute}}
 
 Vermutlich findest du einen Wert von `29.05`.   
 Jetzt erstellen wir einen Index für die Kundennamen:  
+
 `CREATE INDEX ind_namen ON rechnungen USING BTREE ((details->'Name'));`{{execute}}
 
 Und lassen uns erneut die Kosten ausgeben:  
+
 `EXPLAIN SELECT * FROM rechnungen WHERE details ->> 'Name' LIKE 'Mich%';`{{execute}}
 
-Jetzt solltest du einen deutlich geringeren Wert statt die `29.05` sehen.  
-Zeitlich solltest du bei unseren 4 Einträgen keinen Unterschied festellen.  
-**Ein Index lohnt sich oft erst ab mehreren Tausend Einträgen.**
+Nun solltest du einen deutlich geringeren Wert statt die `29.05` sehen. Wir tun damit unserer Anwendung und der Datenbank einen Gefallen.  
+Einen zeitlichen Unterschied solltest du bei unseren 4 Einträgen jedoch nicht festellen.  
+**Denn ein Index lohnt sich oft erst ab mehreren tausend Einträgen** und ab dann ist auch die Berechnungszeit deutlich geringer.
 
 ### Hash 
-Ist lediglich für rudimentäre Gleichheitsabfragen geeignet. Verwendeter Operant ist dabei das `=`. 
+Der Hash Index ist  lediglich für rudimentäre Gleichheitsabfragen geeignet. D.h. wenn der verwendete Operant `=` ist. 
 
 
 ### GIN
