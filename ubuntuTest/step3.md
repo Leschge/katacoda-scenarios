@@ -9,7 +9,7 @@ Diesen benutzt du in der Regel für Ergebnisse, die direkt von deiner Anwendung 
 
 
 Der `->` Operator hingegen gibt den Rückgabewert als JSON(B)-Objekt aus.  
-Dadurch kann der Rückgabewert direkt mit weiteren Befehle verknüpft werden. Oder anders formuliert: Der `->` Operator ermöglicht eine Verkettung von Befehlen.
+Dadurch kann der Rückgabewert direkt mit weiteren Befehlen verknüpft werden. Oder anders formuliert: Der `->` Operator ermöglicht eine Verkettung von Befehlen.
 ```
 '{"a": "value"}'::json->'a'  = "value"
 ```
