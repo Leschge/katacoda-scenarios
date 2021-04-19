@@ -41,6 +41,6 @@ https://scalegrid.io/blog/using-jsonb-in-postgresql-how-to-effectively-store-ind
 
 Bildquellen:
 
-Datalake to Dataswamp
+Datalake to Dataswamp  
 https://cloudrise.com/wp-content/uploads/2020/05/Cloudrise_Case-Study_Data-Lakes_20200429_FINAL.pdf
 
