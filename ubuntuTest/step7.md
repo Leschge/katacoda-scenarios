@@ -14,3 +14,5 @@ Allerdings gibt es auch enorme Nachteile aufgrund der unstrukturierten Daten, wi
 - Sicherheitsanfälligkeit
 
 Nicht umsonst wird dieses System auch als _Data Lake_ (dt. Datensee) bezeichnet, da in diesem alle verschiedenen und wichtigen Daten gemeinsam gespeichert werden können. Dieser See kann jedoch schnell zu einem _Data Swamp_ (dt. Datensumpf) werden, wenn überhaupt keine Ordnung der Daten gegeben ist, die Daten sehr selten gepflegt werden oder die Daten nicht Dokumentiert sind. Und um aus einem Sumpf wieder einen See zu machen, wir sehr viel Arbeit und Zeit benötigt.
+
+![Datensee und Datensumpf](./assets/datalake.png)
