@@ -39,3 +39,8 @@ Using JSONB in PostgreSQL: How to Effectively Store & Index JSON Data in Postgre
 https://scalegrid.io/blog/using-jsonb-in-postgresql-how-to-effectively-store-index-json-data-in-postgresql/#6
 
 
+Bildquellen:
+
+Datalake to Dataswamp
+https://cloudrise.com/wp-content/uploads/2020/05/Cloudrise_Case-Study_Data-Lakes_20200429_FINAL.pdf
+
