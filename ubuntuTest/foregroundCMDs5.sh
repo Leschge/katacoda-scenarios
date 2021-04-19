@@ -53,3 +53,6 @@ INSERT INTO rechnungen (rechnungsNr, details) VALUES (23777, '{
 		{ "Name": "Socken", "Preis": "9.99" }
 	]
 }');
+
+
+\! clear
