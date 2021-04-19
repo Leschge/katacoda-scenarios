@@ -10,5 +10,6 @@ Folgende Inhalte werden vermittelt:
 - Aggregatfunktionen auf JSON-Einträge anwenden
 - Bedingte Abfragen über WHERE
 - Indexierung von JSON-Daten
+- Datensee und Datensumpf
 
 Viel Spaß!
