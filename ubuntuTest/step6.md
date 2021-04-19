@@ -42,4 +42,4 @@ Er ist für zusammengesetzte Daten und für Abfragen, die nach Werten innerhalb 
 
 Wie du siehst, solltest du also je nach Art deiner Abfragen auf verschiedene Index Arten setzen, um ein Ergebnis schnell zurück zu bekommen.
 
-Und das wars auch schon, auf der nächsten Seite findest du noch eine Zusammenfassung und ein paar Good-To-Knows.
+Und das wars auch schon, auf der nächsten Seite findest du noch ein paar Good-To-Knows 👨‍💻
