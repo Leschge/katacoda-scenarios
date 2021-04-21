@@ -2,10 +2,11 @@
 
 echo "STARTE TUTORIAL ..." 
 docker run --name my-postgres -e POSTGRES_PASSWORD=password -d postgres
-sleep 1
+sleep 2
+mkdir /root/json
+docker cp /root/json/data.json my-postgres:/json/data.json
 docker cp /root/json/data.json my-postgres:/data.json
 docker exec -it my-postgres bash
-sleep 2
+sleep 3
 psql -U postgres
-#\! clear
-#cat data.json | psql -h localhost -p 5432 feeds -c "COPY hey (data) FROM STDIN;"
+\! clear

@@ -1,0 +1,63 @@
+{
+  "title": "JSON in PostgreSQL",
+  "description": "",
+  "difficulty": "Beginner",
+  "time": "20",
+  "details": {
+    "steps": [
+      {
+        "title": "Einleitung",
+        "text": "step1.md"
+      },
+      {
+        "title": "Vorbereitung",
+        "text": "step2.md"
+      },
+      {
+        "title": "JSON Abfragen",
+        "text": "step3.md"
+      },
+      {
+        "title": "Aggregatfunktionen",
+        "text": "step4.md"
+      },
+      {
+        "title": "Bedingte Abfragen",
+        "text": "step5.md",
+        "code": "foregroundCMDs5.sh"
+      },
+      {
+        "title": "Index",
+        "text": "step6.md"
+      },
+      {
+        "title": "Ende",
+        "text": "step7.md"
+      }
+    ],
+    "intro": {
+      "text": "intro.md",
+      "courseData":"backgroundCMDs.sh",
+      "code":"foregroundCMDs.sh"
+    },
+    "finish": {
+      "text": "finish.md"
+    },
+    "assets": {
+      "host01": [
+          {"file": "StrukturRechnung.js", "target": "/root/json", "chmod": "+x"},
+          {"file": "StrukturRechnungen.js", "target": "/root/json", "chmod": "+x"}
+      ]
+  }
+  },
+  "environment": {
+    "uilayout": "editor-terminal",
+    "uisettings": "javascript",
+    "uieditorpath": "/root/json"
+  },
+  "backend": {
+    "imageid": "ubuntu:2004"
+  },
+  "files":[
+  ]
+}
