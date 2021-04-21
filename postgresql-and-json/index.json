@@ -1,6 +1,6 @@
 {
-  "title": "PostgreSQL and JSON",
-  "description": "",
+  "title": "PostgreSQL und JSON",
+  "description": "GERMAN / DEUTSCH - In diesem interaktiven Tutorial lernst du die Verwendung vom JSON-Format in PostgreSQL. Von Insert bis Indexierung und alles was du sonst noch wissen musst.",
   "difficulty": "Beginner",
   "time": "20",
   "details": {
