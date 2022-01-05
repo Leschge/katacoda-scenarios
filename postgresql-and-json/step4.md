@@ -22,7 +22,7 @@ Die Funktion `jsonb_array_elements()` sorgt dafür, dass jeder Artikel (in unser
 
 __2. Spaltenname hinzufügen__
 
-Vielleicht erkennst du, dass wir in der neuen Tabelle nur eine Spalte mit dem Namen `jsonb_array_elements` haben. Das ist ziemlich unschön, weshalb wir ein weiteres `AS` einbauen damit die Spalte absofort `Artikel` heisst.
+Vielleicht erkennst du, dass wir in der neuen Tabelle nur eine Spalte mit dem Namen `jsonb_array_elements` haben. Das ist ziemlich unschön, weshalb wir ein weiteres `AS` einbauen, damit die Spalte absofort `Artikel` heisst.
 
 `WITH AlleArtikel AS ( SELECT jsonb_array_elements(details->'Artikel') AS Artikel FROM rechnungen)
 SELECT * FROM AlleArtikel;`{{execute}}
