@@ -34,7 +34,7 @@ rechnungsNr = 23774
 }')
 ```
 
-Wir benutzen das wie von SQL gewohnte INSERT Statement:
+Wir benutzen das, wie von SQL gewohnte, INSERT Statement und geben die JSON-Daten als String mit:
 
 `INSERT INTO rechnungen (rechnungsNr, details) VALUES (23774, '{ 
 	"Name":"Hans Peter", 
