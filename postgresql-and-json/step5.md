@@ -18,7 +18,7 @@ Die `to_date()` Funktion konvertiert den String in einen `timestamp` mit dem For
 
 Manchmal ist es ganz praktisch, wenn du gleich ein ganzes Objekt oder Array in einer Abfrage vergleichen kannst. 
 Nehmen wir als Beispiel die Adresse zur Hand. Du möchtest einen Kunden anhand dieser bestimmen, aber nicht 
-jedes Feld ( "Strasse", "PLZ und "Ort" ) einzeln überprüfen. Hier bietet JSONB den `@>` oder `<@` Operator an, dieser gibt `true` zurück, wenn mindestens der Vergleichswert im Objekt oder Array gefunden wurde.   
+jedes Feld ( "Strasse", "PLZ und "Ort" ) einzeln überprüfen. Hier bietet JSONB den `@>` oder `<@` Operator an, dieser gibt `true` zurück, wenn mindestens der von dir angegebene Vergleichswert im Objekt oder Array gefunden wurde.   
 Für unsere Adresse sieht die Abfrage so aus:
 
 `SELECT details ->> 'Name', details ->> 'Adresse' FROM rechnungen WHERE details -> 'Adresse' @> '{ "Strasse": "Winkelgasse 9", "PLZ": "83711", "Ort": "Konstanz" }';
