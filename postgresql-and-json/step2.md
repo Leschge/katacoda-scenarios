@@ -3,6 +3,9 @@ In diesem Tutorial verwenden wir den von PostgreSQL zur Verfügung gestellten Da
 Dieser ist im Gegensatz zu _json_ deutlich schneller und ermöglicht die Indexierung von Einträgen.
 Einzige Nachteile sind, dass _jsonb_ keine Leerzeichen speichert, keine doppelten Schlüssel erlaubt und die Reihenfolge der Einträge varieren kann.
 
+__Bevor du loslegst:__  
+Bitte schaue rechts im Terminal, ob du `postgres=#` siehts. Falls ja, kannst du loslegen! Springe zu __Tabelle erzeugen__  
+Falls du `root@28e8ad58ddf9:` oder ähnlich sehen solltest, führe bitte `psql -U postgres`{{exec}} aus. Funktioniert das nicht, lade die Seite bitte neu und warte ein paar Sekunden.
 
 
 ### Tabelle erzeugen
@@ -15,7 +18,7 @@ Erstelle eine neue Tabelle "rechnungen" mit dem Feld "rechnungsNr" (Schlüssel I
 
 Überprüfe ob deine Tabelle erfolgreich erstellt wurde:
 
-`\d rechnungen;`{{exec}}
+`\d rechnungen`{{exec}}
 
 ### Einträge hinzufügen
 Wir wollen nun die folgende Rechnungen hinzufügen.
