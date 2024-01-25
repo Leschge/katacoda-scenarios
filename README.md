@@ -1,10 +1,3 @@
-# Interactive Katacoda Scenarios
+# Interaktives Tutorial zu PostgreSQL und JSON 
+Starte hier das Tutorial kostenlos:  [PostgreSQL und JSON](https://killercoda.com/ddomnik/scenario/postgresql-and-json)
 
-[![](http://shields.katacoda.com/katacoda/leschge/count.svg)](https://www.katacoda.com/leschge "Get your profile on Katacoda.com")
-
-Visit https://www.katacoda.com/ddomnik to view the profile and interactive scenarios
-
-### Writing Scenarios
-Visit https://www.katacoda.com/docs to learn more about creating Katacoda scenarios
-
-For examples, visit https://github.com/katacoda/scenario-example
