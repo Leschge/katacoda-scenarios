@@ -15,7 +15,7 @@ Erstelle eine neue Tabelle "rechnungen" mit dem Feld "rechnungsNr" (Schlüssel I
 
 Überprüfe ob deine Tabelle erfolgreich erstellt wurde:
 
-`\d rechnungen;`{{execute}}
+`\d rechnungen;`{{exec}}
 
 ### Einträge hinzufügen
 Wir wollen nun die folgende Rechnungen hinzufügen.
