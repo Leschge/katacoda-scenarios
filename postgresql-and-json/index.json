@@ -56,7 +56,7 @@
     "uieditorpath": "/root/json"
   },
   "backend": {
-    "imageid": "ubuntu:2004"
+    "imageid": "ubuntu"
   },
   "files":[
   ]
